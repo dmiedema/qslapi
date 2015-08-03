@@ -10,6 +10,8 @@
 		65B5B6831B6F198200B70AB0 /* qslapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B5B6821B6F198200B70AB0 /* qslapi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65B5B68A1B6F198200B70AB0 /* qslapi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B5B67F1B6F198200B70AB0 /* qslapi.framework */; };
 		65B5B68F1B6F198200B70AB0 /* qslapiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B5B68E1B6F198200B70AB0 /* qslapiTests.swift */; };
+		65B5B69A1B6F1D4200B70AB0 /* SwiftWebSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B5B6991B6F1D4200B70AB0 /* SwiftWebSocket.framework */; };
+		65B5B69E1B6F1E0500B70AB0 /* SlackRTMTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B5B69D1B6F1E0500B70AB0 /* SlackRTMTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		65B5B6891B6F198200B70AB0 /* qslapiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qslapiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B5B68E1B6F198200B70AB0 /* qslapiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qslapiTests.swift; sourceTree = "<group>"; };
 		65B5B6901B6F198200B70AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65B5B6991B6F1D4200B70AB0 /* SwiftWebSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftWebSocket.framework; path = Carthage/Build/iOS/SwiftWebSocket.framework; sourceTree = "<group>"; };
+		65B5B69D1B6F1E0500B70AB0 /* SlackRTMTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackRTMTypes.swift; path = WebSockets/SlackRTMTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B5B69A1B6F1D4200B70AB0 /* SwiftWebSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +58,7 @@
 		65B5B6751B6F198200B70AB0 = {
 			isa = PBXGroup;
 			children = (
+				65B5B6991B6F1D4200B70AB0 /* SwiftWebSocket.framework */,
 				65B5B6811B6F198200B70AB0 /* qslapi */,
 				65B5B68D1B6F198200B70AB0 /* qslapiTests */,
 				65B5B6801B6F198200B70AB0 /* Products */,
@@ -71,6 +77,7 @@
 		65B5B6811B6F198200B70AB0 /* qslapi */ = {
 			isa = PBXGroup;
 			children = (
+				65B5B69C1B6F1DDD00B70AB0 /* WebSockets */,
 				65B5B6821B6F198200B70AB0 /* qslapi.h */,
 				65B5B6841B6F198200B70AB0 /* Info.plist */,
 			);
@@ -84,6 +91,14 @@
 				65B5B6901B6F198200B70AB0 /* Info.plist */,
 			);
 			path = qslapiTests;
+			sourceTree = "<group>";
+		};
+		65B5B69C1B6F1DDD00B70AB0 /* WebSockets */ = {
+			isa = PBXGroup;
+			children = (
+				65B5B69D1B6F1E0500B70AB0 /* SlackRTMTypes.swift */,
+			);
+			name = WebSockets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +123,7 @@
 				65B5B67B1B6F198200B70AB0 /* Frameworks */,
 				65B5B67C1B6F198200B70AB0 /* Headers */,
 				65B5B67D1B6F198200B70AB0 /* Resources */,
+				65B5B69B1B6F1D4B00B70AB0 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +158,7 @@
 		65B5B6761B6F198200B70AB0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Quack;
 				TargetAttributes = {
@@ -188,11 +205,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		65B5B69B1B6F1D4B00B70AB0 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftWebSocket.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		65B5B67A1B6F198200B70AB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B5B69E1B6F1E0500B70AB0 /* SlackRTMTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,26 +343,37 @@
 		65B5B6941B6F198200B70AB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = qslapi/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Quack.qslapi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		65B5B6951B6F198200B70AB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = qslapi/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
