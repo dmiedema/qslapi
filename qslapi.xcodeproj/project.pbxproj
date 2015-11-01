@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		657513E91BE6AE240022B5DC /* SlackRTMConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657513E81BE6AE240022B5DC /* SlackRTMConnection.swift */; };
 		65B5B6831B6F198200B70AB0 /* qslapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B5B6821B6F198200B70AB0 /* qslapi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65B5B68A1B6F198200B70AB0 /* qslapi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B5B67F1B6F198200B70AB0 /* qslapi.framework */; };
 		65B5B68F1B6F198200B70AB0 /* qslapiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B5B68E1B6F198200B70AB0 /* qslapiTests.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		657513E81BE6AE240022B5DC /* SlackRTMConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlackRTMConnection.swift; path = WebSockets/SlackRTMConnection.swift; sourceTree = "<group>"; };
 		65B5B67F1B6F198200B70AB0 /* qslapi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = qslapi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B5B6821B6F198200B70AB0 /* qslapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qslapi.h; sourceTree = "<group>"; };
 		65B5B6841B6F198200B70AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				65B5B69D1B6F1E0500B70AB0 /* SlackRTMTypes.swift */,
+				657513E81BE6AE240022B5DC /* SlackRTMConnection.swift */,
 			);
 			name = WebSockets;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657513E91BE6AE240022B5DC /* SlackRTMConnection.swift in Sources */,
 				65B5B69E1B6F1E0500B70AB0 /* SlackRTMTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +426,7 @@
 				65B5B6951B6F198200B70AB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65B5B6961B6F198200B70AB0 /* Build configuration list for PBXNativeTarget "qslapiTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +435,7 @@
 				65B5B6981B6F198200B70AB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

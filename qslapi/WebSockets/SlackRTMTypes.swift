@@ -258,9 +258,19 @@ enum Method: String {
     case IMMark     = "im.mark"
     /// Opens a direct message channel.
     case IMOpne     = "im.open"
+
     // MARK: OAuth
     /// Exchanges a temporary OAuth code for an API token.
     case OAuthAccess = "oauth.access"
+
+    // MARK: Pins
+    /// Pins an item to a channel.
+    case PinsAdd    = "pins.add"
+    /// Lists items pinned to a channel.
+    case PinsList   = "pins.list"
+    /// Removes a pinned item from a channel.
+    case PinsRemove = "pins.remove"
+
     // MARK: Reactions
     /// Adds a reaction to an item.
     case ReactionsAdd = "reactions.add"
@@ -284,8 +294,12 @@ enum Method: String {
     case SearchMessages = "search.messages"
 
     // MARK: Stars
+    /// Adds a star to an item.
+    case StarsAdd  = "stars.add"
     /// Lists stars for a user.
     case StarsList = "stars.list"
+    /// Removes a star from an item.
+    case StarsRemove = "stars.remove"
     
     // MARK: Team
     /// Gets the access logs for the current team.
@@ -316,6 +330,8 @@ enum Type: String {
     case Group = "group"
     /// A direct message channel with a user
     case IM = "im"
+    /// A multiparty direct message
+    case MPIM = "mpim"
     /// A member on your team
     case User = "user"
 }
